@@ -1,5 +1,0 @@
-household_power_consumption.zip
-was downloaded from
-https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
-at
-2015-12-09 16:53:46
