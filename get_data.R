@@ -1,4 +1,4 @@
-# ---- Download file ----------------------------------------------------------
+# Download file ----------------------------------------------------------------
 library(downloader)
 file_URL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 file_name <- "household_power_consumption.zip"
@@ -15,16 +15,16 @@ writeLines(c(file_name,
            file_connection)
 close(file_connection)
 
-# ---- Unzip file --------------------------------------------------------------
+# Unzip file -------------------------------------------------------------------
 unzip("household_power_consumption.zip")
 
-# ---- Read file into R --------------------------------------------------------
-data <- read.table("household_power_consumption.txt", header = TRUE, 
+# Read file into R -------------------------------------------------------------
+dat <- read.table("household_power_consumption.txt", header = TRUE, 
                    na.strings = "?", sep = ";")
 
-# ---- Subset the dates of interest --------------------------------------------
-dat <- data[(data$Date == "1/2/2007") | (data$Date == "2/2/2007"), ]
-rm(data)
+# Subset the dates of interest -------------------------------------------------
+dat <- dat[(dat$Date == "1/2/2007") | (dat$Date == "2/2/2007"), ]
 
-# ---- Convert dates and times to appropriate classes --------------------------
-dat$Date <- as.Date(data$Date, format = "%d/%m/%Y")
+# Convert dates and times to appropriate classes -------------------------------
+dat$Time <- strptime(paste(dat$Date, dat$Time, sep = " "), 
+                     format = "%d/%m/%Y %H:%M:%S")
