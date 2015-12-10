@@ -17,7 +17,7 @@ dat$Time <- strptime(paste(dat$Date, dat$Time, sep = " "),
 # Create plot file -------------------------------------------------------------
 
 # Open png device
-png(file = "plot4.png")  # accept default height/width (480 px)
+png(file = "plot4.png", bg = "transparent")  # default height/width (480 px)
 
 # Create plot
 par(mfrow = c(2, 2))  # set up 2 x 2 grid of plots

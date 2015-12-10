@@ -17,7 +17,7 @@ dat$Time <- strptime(paste(dat$Date, dat$Time, sep = " "),
 # Create plot file -------------------------------------------------------------
 
 # Open png device
-png(file = "plot3.png")  # accept default height/width (480 px)
+png(file = "plot3.png", bg = "transparent")  # default height/width (480 px)
 
 # Create plot
 with(dat, plot(x = Time, y = Sub_metering_1, type = "n", 

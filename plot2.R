@@ -17,7 +17,7 @@ dat$Time <- strptime(paste(dat$Date, dat$Time, sep = " "),
 # Create plot file -------------------------------------------------------------
 
 # Open png device
-png(file = "plot2.png")  # accept default height/width (480 px)
+png(file = "plot2.png", bg = "transparent")  # default height/width (480 px)
 
 # Create plot
 plot(x = dat$Time, y = dat$Global_active_power, type = "l",

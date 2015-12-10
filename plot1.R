@@ -17,7 +17,7 @@ dat$Time <- strptime(paste(dat$Date, dat$Time, sep = " "),
 # Create plot file -------------------------------------------------------------
 
 # Open png device
-png(file = "plot1.png")  # accept default height/width (480 px)
+png(file = "plot1.png", bg = "transparent")  # default height/width (480 px)
 
 # Create plot
 hist(dat$Global_active_power, col = "red", main = "Global Active Power",
